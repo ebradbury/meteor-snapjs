@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'bdunnette:snapjs',
+  name: 'ebradbury:snapjs',
   summary: 'Snap.js smart package',
   version: '1.0.0',
-  git: 'https://github.com/bdunnette/meteor-snapjs'
+  git: 'https://github.com/ebradbury/meteor-snapjs'
 });
 
 Package.onUse(function (api) {

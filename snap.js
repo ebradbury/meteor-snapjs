@@ -188,6 +188,9 @@
                     if(cache.easingTo===0){
                         utils.klass.remove(doc.body, 'snapjs-right');
                         utils.klass.remove(doc.body, 'snapjs-left');
+                        utils.dispatchEvent('close');
+                    } else {
+                        utils.dispatchEvent('open');
                     }
 
                     utils.dispatchEvent('animated');
@@ -420,7 +423,6 @@
 
                         // Tap Close
                         if (cache.dragWatchers.current === 0 && translated !== 0 && settings.tapToClose) {
-                            utils.dispatchEvent('close');
                             utils.events.prevent(e);
                             action.translate.easeTo(0);
                             cache.isDragging = false;
@@ -476,7 +478,6 @@
          * Public
          */
         this.open = function(side) {
-            utils.dispatchEvent('open');
             utils.klass.remove(doc.body, 'snapjs-expand-left');
             utils.klass.remove(doc.body, 'snapjs-expand-right');
 
@@ -495,7 +496,6 @@
             }
         };
         this.close = function() {
-            utils.dispatchEvent('close');
             action.translate.easeTo(0);
         };
         this.expand = function(side){
