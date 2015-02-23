@@ -279,7 +279,7 @@
                             if((settings.disable == 'right') && (cache.translation == settings.maxPosition)) {
                                 return;
                             }
-                            if(settings.disable == 'left') && (cache.translation == settings.minPosition)) {
+                            if((settings.disable == 'left') && (cache.translation == settings.minPosition)) {
                                 return;
                             }
                             if((settings.disable == 'none') && (cache.translation == settings.maxPosition || cache.translation == settings.minPosition)) {
