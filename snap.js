@@ -275,11 +275,16 @@
                         var dragParent = utils.parentUntil(target, settings.dragger);
                         
                         // Only use dragger if we're in a closed state
-                        if( !dragParent && 
-                            (cache.translation !== settings.minPosition && 
-                            cache.translation !== settings.maxPosition
-                        )){
-                            return;
+                        if(!dragParent) {
+                            if((settings.disable == 'right') && (cache.translation == settings.maxPosition)) {
+                                return;
+                            }
+                            if(settings.disable == 'left') && (cache.translation == settings.minPosition)) {
+                                return;
+                            }
+                            if((settings.disable == 'none') && (cache.translation == settings.maxPosition || cache.translation == settings.minPosition)) {
+                                return;
+                            }
                         }
                     }
                     
